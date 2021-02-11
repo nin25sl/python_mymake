@@ -1,24 +1,22 @@
-import pygame as pg
-import sys, time
+listx = [0,1,2,3]
+listx[0] = [1,0,1]
+listx[1] = [0,0,1]
+listx[2] = [1,1,1]
+listx[3] = [1,1,1]
+temp = []
 
-pg.init()
-GAMEN = pg.display.set_mode((400, 300))
-pg.display.set_caption('Hello World!')
-pg.draw.rect(GAMEN, (255, 0, 0), (150, 50, 100, 50))
+for i in range(3):
+    if 0 in listx[i]:
+        pass
+    else:
+        temp.append(i)
 
-x = 50
-dx = 10
-while True:
-    GAMEN.fill((0, 120, 120))
-    pg.draw.rect(GAMEN, (255, 120, 120), (x, 150, 100, 50))
-    pg.display.update()
+for i in temp:
+    for j in range(i, -1, -1):
+        print(j,listx[j])
+        if j == 0:
+            listx[j] = [0,0,0]
+        else:
+            listx[j] = listx[j-1]
 
-    if x >= 300 or x <= 0:
-        dx = -dx
-    x += dx
-    time.sleep(0.05)
-
-    for event in pg.event.get():
-        if event.type == pg.QUIT:
-            pg.quit()
-            sys.exit()
+print(listx)

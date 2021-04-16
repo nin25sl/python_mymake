@@ -421,6 +421,7 @@ def main():
         column = setTetramino(column,screen,minoparams)
         drawTetramino(column, screen)
         temp = 0
+        pygame.time.delay(150)
         while True:
             temp = 0
             for event in pygame.event.get():
@@ -450,7 +451,7 @@ def main():
             #     print(temp)
             #     break;
 
-            pygame.time.delay(100)
+            pygame.time.delay(150)
             pygame.display.update()
 
         if temp == 2:
